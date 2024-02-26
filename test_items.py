@@ -10,5 +10,5 @@ class Test():
     def test_element(self, browser, link):
         browser.implicitly_wait(7)
         browser.get(link)
-        browser.find_element(By.CSS_SELECTOR, "#add_to_basket_form > button")
-        time.sleep(30)
+        basket_button = browser.find_element(By.CSS_SELECTOR, "#add_to_basket_form > button")
+        assert basket_button.is_displayed()
